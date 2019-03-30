@@ -1,0 +1,15 @@
+
+@(title: String)(content: Html)
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>@title</title>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" media="screen" href='@routes.Assets.versioned("stylesheets/viewtest.css")'>
+    </head>
+    <body>
+        @content
+        <a href="@routes.HomeController.index">目次へ戻る</a>
+    </body>
+</html>

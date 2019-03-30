@@ -1,6 +1,14 @@
-@()
+@(now:String)
 
-@main("Welcome") {
+@main("ProSeeds") {
+  <section id="content">
+    <h2>はじめてのplay</h2>
+    <h3>@now</h3>
+    <a href="@routes.ViewTestController.index">viewtest</a>
+  </section>
+}
+
+<!-- @main("ProSeeds") {
 @defining(play.core.PlayVersion.current) { version =>
 
 <section id="content">
@@ -68,4 +76,4 @@
   </div>
 </section>
 }
-}
+} -->
