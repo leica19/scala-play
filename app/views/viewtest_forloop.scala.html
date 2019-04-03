@@ -1,13 +1,17 @@
 @(title:String="hoge")(topics:Array[String])
 
+@makelist(thelist:Array[String])={
+    <ul>
+        @for(item <- thelist){
+            <li>@item</li>
+        }
+    </ul>
+}
+
 @viewtest_main("My New Page") {
     <section id="content">
             <h1>title is @title</h1>
             <h2>my new page</h2>
-            <ul>
-                @for(topic <- topics){
-                    <li>@topic</li>
-                }
-            </ul>
+            @makelist(topics)
         </section>
 }

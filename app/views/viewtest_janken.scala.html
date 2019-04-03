@@ -1,0 +1,27 @@
+@(title:String="hoge")(result:JankenCase)
+
+@viewtest_main("My New Page") {
+    <section id="content">
+            <h1>title is @title</h1>
+            <h2>my new page</h2>
+            <p>あなた：@result.me</p>
+            <p>わたし：@result.you</p>
+
+            @result match {
+
+                case JankenCase("グー", "グー") => {<p>ひきわけ</p>}
+                case JankenCase("グー", "チョキ") => {<p>あなたの勝ち</p>}
+                case JankenCase("グー", "パー") => {<p>あなたの負け</p>}
+
+                case JankenCase("チョキ", "チョキ") => {<p>ひきわけ</p>}
+                case JankenCase("チョキ", "パー") => {<p>あなたの勝ち</p>}
+                case JankenCase("チョキ", "グー") => {<p>あなたの負け</p>}
+
+                case JankenCase("パー", "パー") => {<p>ひきわけ</p>}
+                case JankenCase("パー", "グー") => {<p>あなたの勝ち</p>}
+                case JankenCase("パー", "チョキ") => {<p>あなたの負け</p>}
+
+            }
+            
+        </section>
+}
