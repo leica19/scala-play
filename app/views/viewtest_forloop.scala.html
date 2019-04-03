@@ -1,0 +1,13 @@
+@(title:String="hoge")(topics:Array[String])
+
+@viewtest_main("My New Page") {
+    <section id="content">
+            <h1>title is @title</h1>
+            <h2>my new page</h2>
+            <ul>
+                @for(topic <- topics){
+                    <li>@topic</li>
+                }
+            </ul>
+        </section>
+}

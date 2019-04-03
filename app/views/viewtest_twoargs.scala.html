@@ -1,9 +1,8 @@
 @(title:String="hoge")(rnum:Int=1)
 
-@viewtest_main("My New Page") {
+@viewtest_main(title) {
     <section id="content">
             <h1>title is @title</h1>
-            <h2>my new page</h2>
             <p>@rnum</p>
         </section>
 }

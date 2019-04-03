@@ -8,6 +8,8 @@ GET     /                                   controllers.HomeController.index
 GET     /explore                            controllers.HomeController.explore
 GET     /tutorial                           controllers.HomeController.tutorial
 GET     /viewtest                           controllers.ViewTestController.index
+GET     /twoargs                            controllers.ViewTestController.twoArgs
+GET     /forloop                            controllers.ViewTestController.forLoop
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
