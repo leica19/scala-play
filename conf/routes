@@ -22,6 +22,7 @@ GET     /valform                            controllers.BookValController.showFo
 POST    /valresult                          controllers.BookValController.process
 GET     /roomform                           controllers.RoomController.showForm
 POST    /roomresult                         controllers.RoomController.process
+GET     /goasync/:sec                       controllers.AsyncTestController.goAsync(sec: Int)
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)

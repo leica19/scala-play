@@ -3,10 +3,21 @@
 
 <html>
 <head>
-    <title>送信結果</title>
+    <title>部屋の予約確認</title>
 </head>
 <body>
-    <p>@result</p>
+    <h2>予約確認</h2>
+    <p>部屋名: @result.name</p>
+    <p>使用日時: @result.date</p>
+    <p>使用目的: @result.use</p>
+    <p>
+        @if(result.member) {
+            10%OFF!
+        } else {
+            この機会にご入会をおすすめします！
+        }
+    </p>
+    <p><a href="@routes.RoomController.showForm">再検討</a></p>
     <p><a href="@routes.HomeController.index">目次へ</a></p>
 </body>
 </html>
