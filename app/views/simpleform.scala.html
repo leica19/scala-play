@@ -1,0 +1,15 @@
+@(simpleform: Form[String])(implicit messagesProvider: MessagesProvider, request: RequestHeader)
+@import helper._
+
+<html>
+    <head>
+        <title>最も簡単なフォーム</title>
+    </head>
+    <body>
+        @helper.form(routes.SimpleFormController.process()) {
+            @CSRF.formField
+            @helper.inputText(simpleform("name"))
+            <button>送信</button>
+        }
+    </body>
+</html>
