@@ -1,0 +1,12 @@
+
+@(result: Book)
+
+<html>
+<head>
+    <title>送信結果</title>
+</head>
+<body>
+    <p>@(result.year+"年発表の"+result.author+"作「"+result.title+"」ですね。")</p>
+    <p><a href="@routes.HomeController.index">目次へ</a></p>
+</body>
+</html>

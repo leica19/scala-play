@@ -1,0 +1,20 @@
+
+@(bookform: Form[Book])(implicit messagesProvider: MessagesProvider,
+ request: RequestHeader)
+@import helper._
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>図書フォーム</title>
+    </head>
+    <body>
+        @helper.form(routes.BookFormController.process()) {
+            @CSRF.formField 
+            @helper.inputText(bookform("title"), 'size->50, '_label->"題名")
+            @helper.inputText(bookform("author"),'size->30, '_label->"著者")
+            @helper.inputText(bookform("year"), 'size->20, '_label->"発表年")
+            <button>送信</button>
+     }
+    </body>
+</html>

@@ -1,0 +1,37 @@
+
+@(roomform: Form[Room])(implicit messagesProvider: MessagesProvider,
+ request: RequestHeader)
+@import helper._
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>図書フォーム</title>
+    </head>
+    <body>
+        @helper.form(routes.RoomController.process()) {
+            @CSRF.formField 
+            @helper.select(
+                roomform("name"),
+                options = Seq(
+                    "かえで" -> "かえで",
+                    "あおい" -> "あおい",
+                    "ほたて" -> "ほたて"
+                ),
+                '_label -> "部屋名"
+            )
+            @helper.inputDate(roomform("date"), '_label -> "使用日時")
+            @helper.inputRadioGroup(
+                roomform("use"),
+                options = Seq(
+                    "会議" -> "会議",
+                    "研修" -> "研修",
+                    "パーティー" -> "パーティー"
+                ),
+                '_label -> "使用目的"
+            )
+            @helper.checkbox(roomform("member"), '_label -> "優待会員")
+            <button>送信</button>
+     }
+    </body>
+</html>
