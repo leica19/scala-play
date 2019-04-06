@@ -11,6 +11,9 @@ GET     /viewtest                           controllers.ViewTestController.index
 GET     /twoargs                            controllers.ViewTestController.twoArgs
 GET     /forloop                            controllers.ViewTestController.forLoop
 GET     /janken                             controllers.ViewTestController.doJanken
+GET     /routingtest/:name                  controllers.RoutingTestController.simple(name: String)
+GET     /showdata/:index                    controllers.RoutingTestController.showData(index: Int)
+GET     /realjanken/:index                  controllers.RoutingTestController.doRealJanken(index: Int)
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
